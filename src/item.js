@@ -6,10 +6,11 @@ export class Item {
     this.img = img;
   }
 
-  get number() { localStorage.getItem(this.name) ?? 0; }
-  set number(value) { localStorage.setItem(this.name, value > 0 ? value : 0); }
+  get number () {
+    return Number(localStorage.getItem(this.name));
+  }
 
-  get template() {
+  get template () {
     const el = document.createElement("div");
     el.classList.add("item");
 
@@ -23,9 +24,11 @@ export class Item {
     price.textContent = this.price;
 
     const input = document.createElement("input");
+    input.value = Number(localStorage.getItem(this.name)) ?? 0;
     input.setAttribute("type", "number");
     input.setAttribute("min", "0");
     input.setAttribute("max", "10");
+    input.addEventListener("change", () => localStorage.setItem(this.name, input.value));
 
     el.appendChild(img);
     el.append(name);
