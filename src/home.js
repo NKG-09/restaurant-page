@@ -1,6 +1,6 @@
 import { Item } from "./item.js";
 
-const items = [
+export const items = [
   new Item("Alfredo", "Pasta", "$20", ""),
   new Item("Lasagna", "Pasta", "$20", ""),
   new Item("Roman", "Pizza", "$20", ""),
@@ -10,11 +10,6 @@ const items = [
 ];
 
 export function loadHome(content = document.querySelector("#content")) {
-  if (!content) {
-    console.error("Content not found.");
-    return;
-  }
-
   content.innerHTML = "";
 
   const carousels = new Map();
