@@ -1,3 +1,5 @@
+import "./styles.css";
+
 import { loadHome } from "./home.js";
 import { loadCart } from "./cart.js";
 import { loadAbout } from "./about.js";
