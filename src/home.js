@@ -1,21 +1,23 @@
 import { Item } from "./item.js";
 
+import placeholder from "./img/placeholder.png";
+
 export const items = [
-  new Item("Alfredo", "Pasta", "$20", ""),
-  new Item("Lasagna", "Pasta", "$20", ""),
-  new Item("Spaghetti", "Pasta", "$20", ""),
-  new Item("Fettuccine", "Pasta", "$20", ""),
-  new Item("Trenette", "Pasta", "$20", ""),
-  new Item("Roman", "Pizza", "$20", ""),
-  new Item("Sicilian", "Pizza", "$20", ""),
-  new Item("Neapolitan", "Pizza", "$20", ""),
-  new Item("Fritta", "Pizza", "$20", ""),
-  new Item("Margherita", "Pizza", "$20", ""),
-  new Item("Raspberry", "Tiramisu", "$20", ""),
-  new Item("Pumpkin", "Tiramisu", "$20", ""),
-  new Item("Chocolate", "Tiramisu", "$20", ""),
-  new Item("Berry", "Tiramisu", "$20", ""),
-  new Item("Strawberry", "Tiramisu", "$20", ""),
+  new Item("Alfredo", "Pasta", "$20", placeholder),
+  new Item("Lasagna", "Pasta", "$20", placeholder),
+  new Item("Spaghetti", "Pasta", "$20", placeholder),
+  new Item("Fettuccine", "Pasta", "$20", placeholder),
+  new Item("Trenette", "Pasta", "$20", placeholder),
+  new Item("Roman", "Pizza", "$20", placeholder),
+  new Item("Sicilian", "Pizza", "$20", placeholder),
+  new Item("Neapolitan", "Pizza", "$20", placeholder),
+  new Item("Fritta", "Pizza", "$20", placeholder),
+  new Item("Margherita", "Pizza", "$20", placeholder),
+  new Item("Raspberry", "Tiramisu", "$20", placeholder),
+  new Item("Pumpkin", "Tiramisu", "$20", placeholder),
+  new Item("Chocolate", "Tiramisu", "$20", placeholder),
+  new Item("Berry", "Tiramisu", "$20", placeholder),
+  new Item("Strawberry", "Tiramisu", "$20", placeholder),
 ];
 
 export function loadHome(content = document.querySelector("#content")) {
