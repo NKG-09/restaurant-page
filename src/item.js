@@ -6,8 +6,13 @@ export class Item {
     this.img = img;
   }
 
+  set number (value) {
+    if (value < 0) return;
+    localStorage.setItem(this.name, value);
+  }
+
   get number () {
-    return Number(localStorage.getItem(this.name));
+    return Number(localStorage.getItem(this.name)) ?? 0;
   }
 
   get template () {
@@ -23,17 +28,30 @@ export class Item {
     const price = document.createElement("p");
     price.textContent = this.price;
 
-    const input = document.createElement("input");
-    input.value = Number(localStorage.getItem(this.name)) ?? 0;
-    input.setAttribute("type", "number");
-    input.setAttribute("min", "0");
-    input.setAttribute("max", "10");
-    input.addEventListener("change", () => localStorage.setItem(this.name, input.value));
+    const inputText = document.createElement("p");
+    inputText.classList.add("number");
+    inputText.textContent = this.number;
+
+    const addButton = document.createElement("button");
+    addButton.textContent = "+";
+    addButton.addEventListener("click", () => {
+      this.number++;
+      inputText.textContent = this.number;
+    });
+
+    const subtractButton = document.createElement("button");
+    subtractButton.textContent = "-";
+    subtractButton.addEventListener("click", () => {
+      this.number--;
+      inputText.textContent = this.number;
+    });
 
     el.appendChild(img);
     el.append(name);
     el.appendChild(price);
-    el.appendChild(input);
+    el.appendChild(inputText);
+    el.appendChild(addButton);
+    el.appendChild(subtractButton);
 
     return el;
   }
