@@ -8,6 +8,12 @@ export function loadCart(content = document.querySelector("#content")) {
 
   let total = 0;
 
+  ["Name", "Price", "Count", "Total"].forEach(section => {
+    const p = document.createElement("p");
+    p.textContent = section;
+    itemsDisplay.appendChild(p);
+  });
+
   items.forEach(item => {
     if (item.number <= 0) return;
 
@@ -37,10 +43,11 @@ export function loadCart(content = document.querySelector("#content")) {
 
   const buyButton = document.createElement("button");
   buyButton.textContent = "Buy";
+  buyButton.id = "buy";
 
   itemsDisplay.appendChild(totalLabel);
   itemsDisplay.appendChild(fullTotal);
-  itemsDisplay.appendChild(buyButton);
 
   content.appendChild(itemsDisplay);
+  content.appendChild(buyButton);
 }
